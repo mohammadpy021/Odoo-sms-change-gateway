@@ -1,0 +1,48 @@
+services:
+  odoo-web:
+    container_name: odoo-web
+    restart: unless-stopped
+    build:
+      context: .
+    depends_on:
+      - odoo-db
+    ports:
+      - '8069:8069'
+    volumes:
+      - .:/usr/src/odoo
+      - ./addons:/mnt/extra-addons
+    environment:
+      - HOST=odoo-db
+      - USER=odoo
+      - PASSWORD=odoo
+    command:
+      [
+        './odoo-bin',
+        '--addons-path=addons/',
+        '-d',
+        'odoo-db',
+        '-r',
+        'odoo',
+        '-w',
+        'odoo',
+        '-i',
+        'base',
+        '--db_host=odoo-db',
+        '--db-filter=^odoo-db$',
+      ]
+
+  odoo-db:
+    image: postgres:16
+    container_name: odoo-db
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=odoo-db
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+
+volumes:
+  odoo-db-data:
