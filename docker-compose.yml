@@ -16,9 +16,9 @@ services:
       - USER=odoo
       - PASSWORD=odoo
     command:
-      [
+      [ 'python',
         './odoo-bin',
-        '--addons-path=addons/',
+        '--addons-path=addons/,/usr/src/odoo/addons/',
         '-d',
         'odoo-db',
         '-r',
