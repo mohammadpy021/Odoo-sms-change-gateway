@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- 
+    <menuitem id="sms_integration_root" name="SMS Integration">
+        <menuitem id="sms_integration_provider_add"  name="add a new provider" action="sms_integration_provider_add_action"/>
+    </menuitem> -->
+
+    <!-- <menuitem
+    id="sms_integration_root"
+    name="SMS Integration"
+    sequence="10"/>
+    
+    <menuitem
+        id="sms_integration_provider_add"
+        name="add a new provider"
+        sequence="10"
+        action="sms_integration_provider_add_action"
+        parent="sms_integration_root"
+        /> -->
+
+        <!-- <menuitem id="sms_integration_root" name="SMS Integration">
+            <menuitem id="test_first_level_menu" name="First Level">
+                <menuitem  id="sms_integration_provider_add" name="add a new provider"  action="sms_integration_provider_add_action"/>
+            </menuitem>
+        </menuitem>  -->
+
+
+        
+           
+
+            <!-- <menuitem id="test_menu_root" name="Test">
+                <menuitem id="test_first_level_menu" name="First Level">
+                    <menuitem id="test_model_menu_action" action="test_model_action"/>
+                </menuitem>
+            </menuitem> -->
+
+            <!-- <menuitem id="sms_integration_root" name="SMS Integration">
+                <menuitem id="test_first_level_menu" name="First Level">
+                    <menuitem id="sms_integration_provider_add"  action="add_providers_action"/>
+                </menuitem>
+            </menuitem> -->
+
+            <!-- <menuitem
+                id="sms_integration_root_menu"
+                name="SMS Integration"/> -->
+            <!-- <menuitem
+                id="sms_integration_shortcodes_menu"
+                name="ShortCodes"
+                action="sms_integration_add_short_code_action"
+                parent="sms_integration_root_menu"
+                /> -->
+                
+            <!-- <menuitem
+                id="sms_integration_providers_menu"
+                name="providers"
+                action="add_providers_action"
+                parent="sms_integration_root_menu"
+                />  -->
+
+
+            <menuitem id="sms_integration_providers_menu"
+                name="add a new provider"
+                parent="phone_validation.phone_menu_main"
+                sequence="0"
+                action="add_providers_action"/>
+            
+          
+
+            <!-- <menuitem id="sms_integration_short_code_add"  action="add_short_code_action" name="add shortcode"/>
+            <menuitem id="sms_integration_root" name="add new provider">
+                <menuitem id="test_first_level_menu" name="First Level">
+                    <menuitem id="sms_integration_provider_add"  action="add_providers_action"/>
+                </menuitem>
+            </menuitem> -->
+</odoo>

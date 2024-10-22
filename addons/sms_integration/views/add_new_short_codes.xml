@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sms_integration_add_short_codes_view_form" model="ir.ui.view">
+        <field name="name">sms.integration.add.short.codes.view.form</field>
+        <field name="model">sms.integration.short_codes</field>
+        <field name="arch" type="xml">
+            <form string="create a new short code for provider">
+                <sheet>
+                    <group>
+                        <!-- <field name="provider_id" /> -->
+                        <field name="short_code"  />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- <record id="view_sms_integration_short_codes_tree" model="ir.ui.view">
+            <field name="name">sms.integration.short.code.tree</field>
+            <field name="model">sms.integration.short_codes</field>
+            <field name="arch" type="xml">
+                    <tree default_order="short_code desc" string="SMS shortcode providers">
+                        <field name="provider_id" />
+                        <field name="short_code"  />
+                    </tree>
+            </field>
+    </record> -->
+    
+        <record id="sms_integration_add_short_code_action" model="ir.actions.act_window">
+            <field name="name">add a new shortcode</field>
+            <field name="res_model">sms.integration.short_codes</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+</odoo>
