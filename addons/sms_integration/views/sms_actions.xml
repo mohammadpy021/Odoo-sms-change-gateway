@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <record id="view_sms_integration_providers_form" model="ir.ui.view">
+        <field name="name">sms.integration.providers.form</field>
+        <field name="model">sms.integration.providers</field>
+        <field name="arch" type="xml">
+            <form string="Tags">
+                <sheet>
+                    <div class="oe_title">
+                        <field name="name"/>
+                         
+                        <field name="short_code" />
+                        <field name="api_url" />
+                        <field name="api_key" />
+                        <field name="username" />
+                        <field name="password" />
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record> -->
+
+    <!-- <record id="view_sms_integration_providers_tree" model="ir.ui.view">
+        <field name="name">sms.integration.providers.tree</field>
+        <field name="model">sms.integration.providers</field>
+        <field name="arch" type="xml">
+            <form string="Tags">
+                <tree string="">
+                    <field name="name"/>
+                </tree>
+            </form>
+        </field>
+    </record> -->
+    
+    
+
+    <!-- <record id="test_model_action" model="ir.actions.act_window"> 
+        <field name="name">Test action</field>
+        <field name="res_model">sms.integration.providers</field>
+        <field name="view_mode">list,form</field>
+    </record> -->
+
+</odoo>

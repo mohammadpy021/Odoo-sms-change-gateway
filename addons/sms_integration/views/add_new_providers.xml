@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sms_integration_view_form" model="ir.ui.view">
+        <field name="name">sms.integration.view.form</field>
+        <field name="model">sms.integration.providers</field>
+        <field name="arch" type="xml">
+            <form string="create a new provider">
+                <sheet>
+                    <group>
+                        <field name="provider_name" />
+                        <field name="name" invisible="1"/>
+                        <field name="short_code_ids"  >
+                            <tree string="short codes">
+                                <field name="short_code" />
+                            </tree>
+                            <form string="Short Code">
+                                <group>
+                                    <field name="short_code"/>
+                                </group>
+                            </form>
+                        </field>
+                        <field name="api_url" />    
+                        <field name="api_key"  invisible="provider_name =='web_one' or provider_name =='0098'" password="True" /> 
+                       
+                        <field name="username" invisible="provider_name =='magfa'"/>
+                        
+                        <field name="password"  invisible="provider_name =='magfa'" password="True"/>
+                        
+                    </group>
+                </sheet>
+            
+            </form>
+        </field>
+    </record>
+
+    <record id="view_sms_integration_providers_tree" model="ir.ui.view">
+            <field name="name">sms.integration.providers.tree</field>
+            <field name="model">sms.integration.providers</field>
+            <field name="arch" type="xml">
+
+                    <tree default_order="name desc" string="SMS providers">
+                        <field name="provider_name" />
+
+                        <field name="short_code_ids"  >
+                            <tree string="short codes">
+                                <field name="short_code" />
+                            </tree>
+                        </field>
+
+                        <field name="api_url" />
+                    </tree>
+                
+            </field>
+    </record>
+    
+    <!-- <menuitem id="sms_integration_root" name="add new provider">
+        <menuitem id="test_first_level_menu" name="First Level">
+            <menuitem id="sms_integration_provider_add"  action="add_providers_action"/>
+        </menuitem>
+    </menuitem> -->
+
+    <record id="add_providers_action" model="ir.actions.act_window">
+        <field name="name">add a new provider</field>
+        <field name="res_model">sms.integration.providers</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+</odoo>
