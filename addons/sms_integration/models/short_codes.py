@@ -14,4 +14,4 @@ class ShortCode(models.Model):
         required=True
     )
     
-    short_code = fields.Char(size=50, string="Short Code",required=True, help="example:50005232")
+    short_code = fields.Char(size=50, string="Short Code",required=True, help="example:30005090504425")

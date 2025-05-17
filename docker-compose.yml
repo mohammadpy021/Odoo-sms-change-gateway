@@ -16,9 +16,10 @@ services:
       - USER=odoo
       - PASSWORD=odoo
     command:
-      [ 'python',
+      [
+        'python',
         './odoo-bin',
-        '--addons-path=addons/,/usr/src/odoo/addons/',
+        '--addons-path=addons/, odoo/addons/, ../addons/',
         '-d',
         'odoo-db',
         '-r',
@@ -29,7 +30,11 @@ services:
         'base',
         '--db_host=odoo-db',
         '--db-filter=^odoo-db$',
+        '--dev',
+        'all'
       ]
+    networks:
+      - odoo-network  
 
   odoo-db:
     image: postgres:16
@@ -43,6 +48,25 @@ services:
       - POSTGRES_PASSWORD=odoo
     volumes:
       - odoo-db-data:/var/lib/postgresql/data
+    networks:
+      - odoo-network 
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@example.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "5050:80"
+    depends_on:
+      - odoo-db
+    networks:
+      - odoo-network  
+
+networks:
+  odoo-network:  
 
 volumes:
   odoo-db-data:

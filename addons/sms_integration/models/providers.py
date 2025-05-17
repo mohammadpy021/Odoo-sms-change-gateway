@@ -18,12 +18,9 @@ class Providers(models.Model):
     )
     
     
-    short_code_ids = fields.One2many('sms.integration.short_codes', 'provider_id', string='short codes')
+    short_code_ids = fields.One2many('sms.integration.short_codes', 'provider_id', string='سر شماره')
     provider_site = fields.Char(string="Provider Site",size=255, help="website of the provider")
     api_url =  fields.Char('API URL', help='example : https://www.odoo.com')
-    #TODO: send_message_url
-    #TODO: check_message_status_url
-    #TODO: cehck message method?
     api_key =  fields.Char('API KEY')
     username = fields.Char('User name')
     password = fields.Char('Password')
